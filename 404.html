@@ -5,10 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-<style>@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);html{scroll-behavior:smooth;}:root{font-size:10px;--heading-height:30em;}body{font-family:Roboto,Arial,sans-serif;min-height:100vh;background-color:#101010;}</style><link rel="stylesheet" href="styles.f56214727ce115502dee.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.f56214727ce115502dee.css"></noscript></head>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<style>body{font-family:Roboto,Arial,sans-serif;min-height:100vh;background-color:#101010;color:#fff;}</style><link rel="stylesheet" href="styles.cd1236b7433057344dfb.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.cd1236b7433057344dfb.css"></noscript></head>
+
 <body>
   <app-root></app-root>
-<script src="runtime.5c05176d2ba0452c8554.js" defer></script><script src="polyfills.c1096e20e9f0298f3fcd.js" defer></script><script src="main.3b55953d55c11d32fbe8.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+
+      // Sticky Header
+      $(window).scroll(function () {
+
+        if ($(window).scrollTop() > 100) {
+          $('.main_h').addClass('sticky');
+        } else {
+          $('.main_h').removeClass('sticky');
+        }
+      });
+
+      // Mobile Navigation
+      $('.mobile-toggle').click(function () {
+        if ($('.main_h').hasClass('open-nav')) {
+          $('.main_h').removeClass('open-nav');
+        } else {
+          $('.main_h').addClass('open-nav');
+        }
+      });
+
+      $('.main_h li a').click(function () {
+        if ($('.main_h').hasClass('open-nav')) {
+          $('.navigation').removeClass('open-nav');
+          $('.main_h').removeClass('open-nav');
+        }
+      });
+
+      // navigation scroll lijepo radi materem
+      $('nav a').click(function (event) {
+        var id = $(this).attr("href");
+        var offset = 70;
+        var target = $(id).offset().top - offset;
+        $('html, body').animate({
+          scrollTop: target
+        }, 500);
+        event.preventDefault();
+      });
+
+    });
+
+  </script>
+<script src="runtime.5c05176d2ba0452c8554.js" defer></script><script src="polyfills.c1096e20e9f0298f3fcd.js" defer></script><script src="main.e381a394aa1e79b2ce6d.js" defer></script>
 
 </body></html>
