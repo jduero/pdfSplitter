@@ -17,6 +17,12 @@ export class PdfsplitterComponent implements OnInit {
   }
 
   async splitPDF() {
+
+    if (!this.file) {
+      alert("Please enter Pdf file!");
+      return;
+   }
+   
     // Load the PDF file
     const pdfData = await this.file.arrayBuffer();
     const pdfDoc = await PDFDocument.load(pdfData, { ignoreEncryption: true });

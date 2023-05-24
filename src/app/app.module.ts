@@ -7,7 +7,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PdfsplitterComponent } from './components/pdfsplitter/pdfsplitter.component';
 import { PdftowordComponent } from './components/pdftoword/pdftoword.component';
-
+import { HttpClientModule, HttpClient } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -19,9 +19,10 @@ import { PdftowordComponent } from './components/pdftoword/pdftoword.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
