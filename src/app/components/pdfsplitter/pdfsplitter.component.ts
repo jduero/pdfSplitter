@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { PDFDocument, PDFPage } from 'pdf-lib';
 
 @Component({
@@ -7,6 +7,10 @@ import { PDFDocument, PDFPage } from 'pdf-lib';
   styleUrls: ['./pdfsplitter.component.css'],
 })
 export class PdfsplitterComponent implements OnInit {
+
+  @ViewChild('formFilePdf')
+  myInputVariable! : ElementRef;
+  
   constructor() {}
 
   ngOnInit(): void {}
@@ -17,12 +21,11 @@ export class PdfsplitterComponent implements OnInit {
   }
 
   async splitPDF() {
-
     if (!this.file) {
-      alert("Please enter Pdf file!");
+      alert('Please enter Pdf file!');
       return;
-   }
-   
+    }
+
     // Load the PDF file
     const pdfData = await this.file.arrayBuffer();
     const pdfDoc = await PDFDocument.load(pdfData, { ignoreEncryption: true });
@@ -56,5 +59,6 @@ export class PdfsplitterComponent implements OnInit {
     link.download = filename;
     link.click();
     URL.revokeObjectURL(url);
+    this.myInputVariable.nativeElement.value = "";
   }
 }

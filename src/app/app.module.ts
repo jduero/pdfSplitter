@@ -7,20 +7,24 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PdfsplitterComponent } from './components/pdfsplitter/pdfsplitter.component';
 import { PdftowordComponent } from './components/pdftoword/pdftoword.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http'; 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { PdfmergerComponent } from './components/pdfmerger/pdfmerger.component'; 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     PdfsplitterComponent,
-    PdftowordComponent
+    PdftowordComponent,
+    PdfmergerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

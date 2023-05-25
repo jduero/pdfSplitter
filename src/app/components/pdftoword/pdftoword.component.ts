@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -8,6 +8,10 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./pdftoword.component.css'],
 })
 export class PdftowordComponent implements OnInit {
+
+  @ViewChild('formFilePdf')
+  myInputVariable! : ElementRef;
+
   file: any;
   fileChanged(e: Event) {
     this.file = (e.target as HTMLInputElement)?.files?.[0];
@@ -124,5 +128,7 @@ export class PdftowordComponent implements OnInit {
     link.href = url;
     link.download = filename;
     link.click();
+    URL.revokeObjectURL(url);
+    this.myInputVariable.nativeElement.value = "";
   }
 }

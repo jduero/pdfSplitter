@@ -151,6 +151,10 @@ h1 {
   font-family: "Montserrat", sans-serif;
 }
 
+.content.row h1{
+  color: #86b7fe;
+}
+
 p {
   margin-bottom: 20px;
   font-size: 17px;
