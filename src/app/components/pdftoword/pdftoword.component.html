@@ -1,0 +1,7 @@
+<div>
+    <div class="text-white">
+      <label for="formFileLg" class="form-label">Enter PDF file</label>
+      <input class="form-control form-control-lg" #formFilePdf id="formFilePdf" type="file" accept=".pdf" (change)="fileChanged($event)" required>
+      <button type="button" class="btn btn-secondary btn-lg my-3" (click)="convertPdfToWord()">Convert</button>
+    </div>
+</div>

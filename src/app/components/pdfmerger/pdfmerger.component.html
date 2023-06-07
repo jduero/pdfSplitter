@@ -1,0 +1,8 @@
+
+<div>
+    <div class="text-white">
+      <label for="formFileLg" class="form-label">Enter PDF file</label>
+      <input class="form-control form-control-lg" #formFilePdf id="formFilePdf"  accept=".pdf" type="file" (change)="fileChanged($event)" multiple>
+      <button type="button" class="btn btn-secondary btn-lg my-3" (click)="mergePDF()">Merge</button>
+    </div>
+</div>

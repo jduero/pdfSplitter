@@ -3,16 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PdfsplitterComponent } from './components/pdfsplitter/pdfsplitter.component';
+import { PdftowordComponent } from './components/pdftoword/pdftoword.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { PdfmergerComponent } from './components/pdfmerger/pdfmerger.component'; 
+import { FormsModule } from '@angular/forms';
+import { PdfcompressComponent } from './components/pdfcompress/pdfcompress.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavigationComponent,
+    PdfsplitterComponent,
+    PdftowordComponent,
+    PdfmergerComponent,
+    PdfcompressComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
