@@ -8,8 +8,8 @@ import { PDFDocument, PDFPage } from 'pdf-lib';
 })
 export class PdfmergerComponent implements OnInit {
   @ViewChild('formFilePdf')
-  myInputVariable! : ElementRef;
-  
+  myInputVariable!: ElementRef;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -30,8 +30,6 @@ export class PdfmergerComponent implements OnInit {
     const newPdf = await PDFDocument.create();
 
     for (let fileIndex = 0; fileIndex < this.file.length; fileIndex++) {
-      
-
       // Load the PDF file
       const pdfData = await this.file[fileIndex].arrayBuffer();
       const pdfDoc = await PDFDocument.load(pdfData, {
@@ -62,6 +60,6 @@ export class PdfmergerComponent implements OnInit {
     link.download = filename;
     link.click();
     URL.revokeObjectURL(url);
-    this.myInputVariable.nativeElement.value = "";
+    this.myInputVariable.nativeElement.value = '';
   }
 }

@@ -10,6 +10,7 @@ import { PdftowordComponent } from './components/pdftoword/pdftoword.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { PdfmergerComponent } from './components/pdfmerger/pdfmerger.component'; 
 import { FormsModule } from '@angular/forms';
+import { PdfcompressComponent } from './components/pdfcompress/pdfcompress.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     NavigationComponent,
     PdfsplitterComponent,
     PdftowordComponent,
-    PdfmergerComponent
+    PdfmergerComponent,
+    PdfcompressComponent
   ],
   imports: [
     BrowserModule,
